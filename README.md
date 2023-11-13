@@ -1,7 +1,8 @@
 # Mna4
 
-
-
+## Publicly Hosted urls
+Frontend [https://videolab.fhict-dev.com/](https://videolab.fhict-dev.com/)
+Backend [https://videolab-api.fhict-dev.com/](https://videolab-api.fhict-dev.com/)
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.

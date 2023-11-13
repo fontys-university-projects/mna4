@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+  .navbar .router-link-active {
+      @apply text-blue-600 dark:text-blue-500 !important;
+  }
