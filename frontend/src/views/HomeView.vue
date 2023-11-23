@@ -31,30 +31,29 @@
         <!-- Title -->
         <div class="max-w-xl mx-auto mt-5 text-center">
           <h1 class="block text-4xl font-bold text-gray-800 md:text-5xl lg:text-6xl dark:text-gray-200">
-            FICT VideoLab
+            Pixel Playground
           </h1>
         </div>
         <!-- End Title -->
 
         <div class="max-w-3xl mx-auto mt-5 text-center">
-          <p class="text-lg text-gray-600 dark:text-gray-400">Welcome to the VideoLab, glad to have you here please feel
+          <p class="text-lg text-gray-600 dark:text-gray-400">Welcome to the Pixel Playground, glad to have you here please feel
             free to explore the awesome content by the R10 Students!</p>
         </div>
-
-        <!-- Buttons -->
-        <div class="flex justify-center gap-3 mt-8">
+        <div class="text-center">
+        <div class="flex justify-center gap-3 mt-2">
           <router-link class="inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-center text-white border border-transparent rounded-full gap-x-3 bg-gradient-to-tl from-blue-600 to-violet-600 hover:from-violet-600 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800"
-             to="/projects">
+                       to="/projects">
             Checkout projects
           </router-link>
         </div>
-        <!-- End Buttons -->
+      </div>
       </div>
     </div>
-    <!-- End Hero -->
   </main>
+
   <!-- Card Blog -->
-  <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  <div class="relative max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
     <!-- Title -->
     <div class="max-w-2xl mx-auto mb-10 text-center lg:mb-14">
       <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">Recommended projects</h2>
@@ -65,21 +64,22 @@
     <!-- Grid -->
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       <!-- Card -->
-      <a class="overflow-hidden group rounded-xl "
-         href="#">
+      <div v-for="article in featured" :key="article.title">
+        <router-link class="overflow-hidden group rounded-xl "
+         :to="article.link">
         <div class="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
           <img class="absolute top-0 object-cover w-full h-full transition-transform duration-500 ease-in-out start-0 group-hover:scale-105 rounded-xl"
-               src="https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"
+               :src="article.thumbnail"
                alt="Image Description">
         </div>
 
         <div class="ml-1 mt-7">
           <h3
               class="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:group-hover:text-gray-300 dark:text-gray-200">
-            Studio by Preline
+            {{ article.title }}
           </h3>
           <p class="mt-3 text-gray-800 dark:text-gray-200">
-            Produce professional, reliable streams easily leveraging Preline's innovative broadcast studio
+            {{ article.description }}
           </p>
           <p class="inline-flex items-center mt-5 font-medium text-blue-600 gap-x-1 decoration-2 group-hover:underline">
             Read more
@@ -97,48 +97,13 @@
             </svg>
           </p>
         </div>
-      </a>
+      </router-link>
+      </div>
       <!-- End Card -->
 
       <!-- Card -->
-      <a class="overflow-hidden group rounded-xl "
-         href="#">
-        <div class="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
-          <img class="absolute top-0 object-cover w-full h-full transition-transform duration-500 ease-in-out start-0 group-hover:scale-105 rounded-xl"
-               src="https://images.unsplash.com/photo-1542125387-c71274d94f0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-               alt="Image Description">
-        </div>
-
-        <div class="ml-1 mt-7">
-          <h3
-              class="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:group-hover:text-gray-300 dark:text-gray-200">
-            Onsite
-          </h3>
-          <p class="mt-3 text-gray-800 dark:text-gray-200">
-            Optimize your in-person experience with best-in-class capabilities like badge printing and lead retrieval
-          </p>
-          <p class="inline-flex items-center mt-5 font-medium text-blue-600 gap-x-1 decoration-2 group-hover:underline">
-            Read more
-            <svg class="flex-shrink-0 w-4 h-4"
-                 xmlns="http://www.w3.org/2000/svg"
-                 width="24"
-                 height="24"
-                 viewBox="0 0 24 24"
-                 fill="none"
-                 stroke="currentColor"
-                 stroke-width="2"
-                 stroke-linecap="round"
-                 stroke-linejoin="round">
-              <path d="m9 18 6-6-6-6" />
-            </svg>
-          </p>
-        </div>
-      </a>
-      <!-- End Card -->
-
-      <!-- Card -->
-      <a class="group relative flex flex-col w-full min-h-[15rem] bg-center bg-cover rounded-xl hover:shadow-lg transition bg-[url('https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3000&q=80')] "
-         href="#">
+      <router-link class="group relative flex flex-col w-full min-h-[15rem] bg-center bg-cover rounded-xl hover:shadow-lg transition bg-[url('https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3000&q=80')] "
+         to="/projects">
         <div class="absolute inset-0 bg-black opacity-50 rounded-xl"></div>
         <div class="relative flex-auto p- md:p-6">
           <h3 class="text-xl text-white/[.9] group-hover:text-white"><span class="font-bold">Want to be one of
@@ -164,7 +129,7 @@
             </svg>
           </div>
         </div>
-      </a>
+      </router-link>
       <!-- End Card -->
     </div>
     <!-- End Grid -->
@@ -193,7 +158,7 @@
                id="hs-basic-with-title-and-arrow-stretched-heading-two">
             <button class="inline-flex items-center justify-between w-full pb-3 font-semibold text-gray-800 transition rounded-lg hs-accordion-toggle group gap-x-3 md:text-lg text-start hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400 "
                     aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-two">
-              {{ question.name  }}
+              {{ question.name }}
               <svg class="flex-shrink-0 block w-5 h-5 text-gray-600 hs-accordion-active:hidden group-hover:text-gray-500 dark:text-gray-400"
                    xmlns="http://www.w3.org/2000/svg"
                    width="24"
@@ -241,6 +206,46 @@
 
 export default {
   data() {
+
+    const showcase = [
+      {
+        thumbnail: 'https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80',
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.',
+        link: '#'
+      },
+      {
+        thumbnail: 'https://images.unsplash.com/photo-1542125387-c71274d94f0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.',
+        link: '#'
+      },
+      {
+        thumbnail: 'https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80',
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.',
+        link: '#'
+      },
+      {
+        thumbnail: 'https://images.unsplash.com/photo-1542125387-c71274d94f0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.',
+        link: '#'
+      },
+      {
+        thumbnail: 'https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80',
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.',
+        link: '#'
+      },
+      {
+        thumbnail: 'https://images.unsplash.com/photo-1542125387-c71274d94f0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.',
+        link: '#'
+      }
+    ]
+
     const FAQ = [
       {
         name: 'Why is my project not showing up?',
@@ -248,7 +253,7 @@ export default {
       },
       {
         name: 'How can I submit my project?',
-        description: 'You can submit your project by going to our backend! You can find the link in the footer of the website as well as the navigation bar it is called "VideoLab Portal".'
+        description: 'You can submit your project by going to our backend! You can find the link in the footer of the website as well as the navigation bar it is called "Pixel Playground Portal".'
       },
       {
         name: 'Why can I not update my project?',
@@ -260,11 +265,28 @@ export default {
       },
       {
         name: 'How can I contact the administrators?',
-        description: 'You can contact the administrators by going to our backend! You can find the link in the footer of the website as well as the navigation bar it is called "VideoLab Portal".'
+        description: 'You can contact the administrators by going to our backend! You can find the link in the footer of the website as well as the navigation bar it is called "Pixel Playground Portal".'
+      }
+    ]
+
+    const featured = [
+      {
+        thumbnail: 'https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80',
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.',
+        link: '#'
+      },
+      {
+        thumbnail: 'https://images.unsplash.com/photo-1542125387-c71274d94f0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.',
+        link: '#'
       }
     ]
     return {
-      FAQ
+      FAQ,
+      featured,
+      showcase
     }
   }
 }

@@ -4,7 +4,7 @@
     <!-- Grid -->
     <div class="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-5">
       <div class="col-span-full lg:col-span-1">
-        <a class="flex-none text-xl font-semibold text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#" aria-label="VideLab">VideLab</a>
+        <router-link class="flex-none text-xl font-semibold text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" to="/" aria-label="Pixel Playground">{{ name }}</router-link>
       </div>
       <!-- End Col -->
 
@@ -20,14 +20,14 @@
       <!-- End Col -->
 
       <div class="col-span-1">
-        <h4 class="font-semibold text-gray-100">Company</h4>
+        <!-- <h4 class="font-semibold text-gray-100">Company</h4>
 
         <div class="grid mt-3 space-y-3">
           <p><a class="inline-flex text-gray-400 gap-x-2 hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">About us</a></p>
           <p><a class="inline-flex text-gray-400 gap-x-2 hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">Blog</a></p>
           <p><a class="inline-flex text-gray-400 gap-x-2 hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">Careers</a> <span class="inline px-2 py-1 text-xs text-white bg-blue-700 rounded-lg ms-1">We're hiring</span></p>
           <p><a class="inline-flex text-gray-400 gap-x-2 hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">Customers</a></p>
-        </div>
+        </div> -->
       </div>
       <!-- End Col -->
 
@@ -89,3 +89,15 @@
   </div>
 </footer>
 </template>
+
+<script>
+
+export default {
+    data() {
+        return {
+            name: import.meta.env.VITE_APP_NAME
+        }
+    },
+}
+
+</script>

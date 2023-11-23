@@ -4,9 +4,9 @@
         <nav class="mt-6 relative max-w-[85rem] w-full bg-white border border-gray-200 rounded-[10px] mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto dark:bg-gray-800 dark:border-gray-700"
              aria-label="Global">
             <div class="flex items-center justify-between">
-                <a class="flex-none text-xl font-semibold dark:text-white"
-                   href="#"
-                   aria-label="VideLab">VideLab</a>
+                <router-link class="flex-none text-xl font-semibold dark:text-white"
+                   to="/"
+                   aria-label="Pixel Playground">{{ name }}</router-link>
                 <div class="md:hidden">
                     <button type="button"
                             class="flex items-center justify-center w-8 h-8 text-sm font-semibold text-gray-800 border border-gray-200 rounded-lg hs-collapse-toggle hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
@@ -64,7 +64,8 @@
                     </router-link>
 
                     <a class="flex items-center font-medium text-gray-500 gap-x-2 hover:text-blue-600 md:border-s md:border-gray-300 md:my-6 md:ps-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500"
-                       :to="portal.url">
+                    target="_blank"   
+                    :href="portal.url">
                         <svg class="flex-shrink-0 w-4 h-4"
                              xmlns="http://www.w3.org/2000/svg"
                              width="24"
@@ -92,6 +93,7 @@
 
 export default {
     data() {
+        const name = import.meta.env.VITE_APP_NAME
         const links = [
             {
                 name: 'Home',
@@ -103,12 +105,13 @@ export default {
             },
         ];
         const portal = {
-            name: 'VideoLab Portal',
-            url: '#',
+            name: name + ' Portal',
+            url: import.meta.env.VITE_PORTAL_URL,
         };
         return {
             links,
             portal,
+            name
         }
     },
 }
