@@ -31,7 +31,7 @@
       </div>
       <!-- End Col -->
 
-      <div class="col-span-2">
+      <!-- <div class="col-span-2">
         <h4 class="font-semibold text-gray-100">Stay up to date</h4>
 
         <form>
@@ -45,7 +45,7 @@
             </a>
           </div>
         </form>
-      </div>
+      </div> -->
       <!-- End Col -->
     </div>
     <!-- End Grid -->

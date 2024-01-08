@@ -7,7 +7,8 @@
         <!-- Announcement Banner -->
         <div class="flex justify-center">
           <a class="inline-flex items-center p-2 px-3 text-xs text-gray-600 transition bg-white border border-gray-200 rounded-full gap-x-2 hover:border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:hover:border-gray-600 dark:text-gray-400"
-             href="#">
+          target="_blank"   
+          href="https://videolab-api.fhict-dev.com/admin/login">
             Want to be part of the content creators?
             <span class="flex items-center gap-x-1">
               <span class="text-blue-600 border-gray-200 border-s ps-2 dark:text-blue-500">Register here</span>
