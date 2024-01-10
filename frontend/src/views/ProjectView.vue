@@ -78,12 +78,13 @@
           </div>
           <!-- End Avatar Media -->
 
-          <div class="space-y-6 pt-2 t-2 border-t border-gray-200 group gap-x-3 dark:border-gray-700" v-if="otherProjects.length !== 0">
+          <div class="space-y-6 pt-2 t-2 border-t border-gray-200 group gap-x-3 dark:border-gray-700" v-if="otherProjects.length > 0">
             <h1 class="pb-4 text-sm font-base italic text-gray-900 dark:text-gray-100">Other projects by {{ video.user_created.first_name }} {{ video.user_created.last_name }}:</h1>
             <!-- Media -->
             <router-link v-for="project in otherProjects" class="flex items-center group gap-x-6"
               :key="project.id"
-               :to="'/project/' + project.id">
+              :to="'/project/' + project.id"
+              @click="otherProject(project.id)">
               <div class="grow">
                 <span
                       class="text-sm font-bold text-gray-800 group-hover:text-blue-600 dark:text-gray-200 dark:group-hover:text-blue-500">
@@ -399,6 +400,28 @@ export default {
 
       return md.render(source);
     },
+    async otherProject(id) {
+      let user = null
+    await axios.get('https://videolab-api.fhict-dev.com/items/videos/' + id + '?fields=user_created.*,id,video,date_updated,thumbnail,title,about_project,camera_name,camera_lens,camera_settings,is_group_project,group_members.directus_users_id.*')
+      .then(response => (
+        this.video = response.data.data,
+        user = response.data.data.user_created.id,
+        this.loaded = true
+      ))
+      .catch(error => 
+      {
+        if(error.response.status == 404 || error.response.status == 403)
+        {
+          this.$router.push('/404')
+        }
+      });
+
+    await axios.get('https://videolab-api.fhict-dev.com/items/videos?fields=id,thumbnail,title&filter={"user_created":"' + user + '","id":{"_neq":"' + id + '"}}')
+      .then(response => (
+        this.otherProjects = response.data.data
+      ))
+      .catch(error => console.log(error));
+    }
   }
 }
 </script>
