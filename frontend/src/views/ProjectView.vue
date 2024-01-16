@@ -78,7 +78,7 @@
           </div>
           <!-- End Avatar Media -->
 
-          <div class="space-y-6 pt-2 t-2 border-t border-gray-200 group gap-x-3 dark:border-gray-700" v-if="otherProjects.length > 0">
+          <div class="space-y-6 pt-2 t-2 border-t border-gray-200 group gap-x-3 dark:border-gray-700 no-print" v-if="otherProjects.length > 0">
             <h1 class="pb-4 text-sm font-base italic text-gray-900 dark:text-gray-100">Other projects by {{ video.user_created.first_name }} {{ video.user_created.last_name }}:</h1>
             <!-- Media -->
             <router-link v-for="project in otherProjects" class="flex items-center group gap-x-6"

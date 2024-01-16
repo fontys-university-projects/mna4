@@ -9,7 +9,6 @@
       <!-- End Col -->
 
       <div class="col-span-1">
-        <h4 class="font-semibold text-gray-100">Product</h4>
 
         <div class="grid mt-3 space-y-3">
           <p v-for="link in links" :key="link.name"><router-link class="inline-flex text-gray-400 gap-x-2 hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" :to="link.url">{{ link.name }}</router-link></p>
