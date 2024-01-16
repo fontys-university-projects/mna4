@@ -1,34 +1,32 @@
 <template>
-  <div v-if="loaded">
-    <main class="h-[calc(100vh-94px)]">
-      <!-- Hero -->
-      <div
-           class="relative flex justify-center items-center h-full overflow-hidden before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/component/squared-bg-element.svg')] before:bg-no-repeat before:bg-top before:w-full before:h-full before:-z-[1] before:transform before:-translate-x-1/2 dark:before:bg-[url('https://preline.co/assets/svg/component/squared-bg-element-dark.svg')]">
-        <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
-          <!-- Announcement Banner -->
-          <div class="flex justify-center">
-            <a class="inline-flex items-center p-2 px-3 text-xs text-gray-600 transition bg-white border border-gray-200 rounded-full gap-x-2 hover:border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:hover:border-gray-600 dark:text-gray-400"
-               target="_blank"
-               href="https://videolab-api.fhict-dev.com/admin/login">
-              Want to be part of the content creators?
-              <span class="flex items-center gap-x-1">
-                <span class="text-blue-600 border-gray-200 border-s ps-2 dark:text-blue-500">Register here</span>
-                <svg class="flex-shrink-0 w-4 h-4 text-blue-600"
-                     xmlns="http://www.w3.org/2000/svg"
-                     width="24"
-                     height="24"
-                     viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="2"
-                     stroke-linecap="round"
-                     stroke-linejoin="round">
-                  <path d="m9 18 6-6-6-6" />
-                </svg>
-              </span>
-            </a>
-          </div>
-          <!-- End Announcement Banner -->
+  <main class="h-[calc(100vh-94px)]">
+    <!-- Hero -->
+    <div
+         class="relative flex justify-center items-center h-full overflow-hidden before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/component/squared-bg-element.svg')] before:bg-no-repeat before:bg-top before:w-full before:h-full before:-z-[1] before:transform before:-translate-x-1/2 dark:before:bg-[url('https://preline.co/assets/svg/component/squared-bg-element-dark.svg')]">
+      <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
+        <!-- Announcement Banner -->
+        <div class="flex justify-center">
+          <a class="inline-flex items-center p-2 px-3 text-xs text-gray-600 transition bg-white border border-gray-200 rounded-full gap-x-2 hover:border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:hover:border-gray-600 dark:text-gray-400"
+             href="#">
+            Want to be part of the content creators?
+            <span class="flex items-center gap-x-1">
+              <span class="text-blue-600 border-gray-200 border-s ps-2 dark:text-blue-500">Register here</span>
+              <svg class="flex-shrink-0 w-4 h-4 text-blue-600"
+                   xmlns="http://www.w3.org/2000/svg"
+                   width="24"
+                   height="24"
+                   viewBox="0 0 24 24"
+                   fill="none"
+                   stroke="currentColor"
+                   stroke-width="2"
+                   stroke-linecap="round"
+                   stroke-linejoin="round">
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </span>
+          </a>
+        </div>
+        <!-- End Announcement Banner -->
 
           <!-- Title -->
           <div class="max-w-xl mx-auto mt-5 text-center">
