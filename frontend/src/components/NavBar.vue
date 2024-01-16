@@ -103,6 +103,10 @@ export default {
                 name: 'Projects',
                 url: '/projects',
             },
+            {
+                name: 'Documentation',
+                url: '/documentation',
+            }
         ];
         const portal = {
             name: name + ' Portal',

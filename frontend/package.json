@@ -9,20 +9,28 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@videojs-player/vue": "^1.0.0",
+    "highlight.js": "^11.9.0",
+    "markdown-it": "^14.0.0",
+    "markdown-it-anchor": "^8.6.7",
+    "markdown-it-container": "^4.0.0",
+    "markdown-it-table-of-contents": "^0.6.0",
     "pinia": "^2.1.7",
-    "preline": "^1.9.0",
-    "vike": "^0.4.144",
-    "vue": "^3.3.4",
+    "preline": "^2.0.3",
+    "video.js": "^8.9.0",
+    "vike": "^0.4.155",
+    "vue": "^3.4.5",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
-    "@vitejs/plugin-vue": "^4.4.0",
+    "@vitejs/plugin-vue": "^5.0.2",
     "autoprefixer": "^10.4.16",
-    "eslint": "^8.49.0",
-    "eslint-plugin-vue": "^9.17.0",
-    "postcss": "^8.4.31",
-    "tailwindcss": "^3.3.5",
-    "vite": "^4.4.11"
+    "eslint": "^8.56.0",
+    "eslint-plugin-vue": "^9.19.2",
+    "postcss": "^8.4.33",
+    "postcss-nesting": "^12.0.2",
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.0.11"
   }
 }
