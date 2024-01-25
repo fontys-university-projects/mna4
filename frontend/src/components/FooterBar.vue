@@ -23,7 +23,7 @@
 
     <div class="grid mt-5 sm:mt-12 gap-y-2 sm:gap-y-0 sm:flex sm:justify-between sm:items-center">
       <div class="flex items-center justify-between">
-        <p class="text-sm text-gray-400">Hosted by Little Adventure Network build with Vue, Preline and Tailwind CSS</p>
+        <p class="text-sm text-gray-400"> </p>
       </div>
       <!-- End Col -->
     </div>
